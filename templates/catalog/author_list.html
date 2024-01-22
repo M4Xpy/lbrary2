@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Author List</h1>
+  {% if author_list %}
+    <ul>
+      {% for author in author_list %}
+        <li><a href="#">
+          {{ author.first_name }} 
+          {{ author.last_name }} 
+{#          ({{ book.price }} , {{ book.format }})#}
+        </a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+{% endblock %}
