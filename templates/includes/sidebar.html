@@ -1,6 +1,6 @@
 <ul class="sidebar-nav">
   <li><a href="{% url 'catalog:index' %}">Home</a></li>
-  <li><a href="#">All Authors</a></li>
-  <li><a href="#">All Books</a></li>
-  <li><a href="#">All Formats</a></li>
+  <li><a href="{% url 'catalog:author-list' %}">All Authors</a></li>
+  <li><a href="{% url 'catalog:book-list' %}">All Books</a></li>
+  <li><a href="{% url 'catalog:literary-formats-list' %}">All Formats</a></li>
 </ul>

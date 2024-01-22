@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Literary Format List</h1>
+  <ul>
+    {% for format in literary_format_list %}
+      <li>{{ format.name }}</li>
+      {% empty %}
+      <p>There is  no  literary  formats</p>
+    {% endfor %}
+  </ul>
+{% endblock %}

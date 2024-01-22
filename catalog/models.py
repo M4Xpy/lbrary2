@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.urls import reverse
 
 from lbrary2.settings import AUTH_USER_MODEL
 
@@ -35,3 +36,6 @@ class Book(models.Model):
 
     def __str__(self):
         return f"{self.title} , {self.price} , {self.format.name} "
+
+    def get_absolute_url(self):
+        return reverse("catalog:book-detail", args=[str(self.id)])
