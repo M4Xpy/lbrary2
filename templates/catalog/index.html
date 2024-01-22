@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}
+  <title>Home page</title>
+{% endblock title %}
+{% block content %}
+  <h1>Library Home</h1>
+  <p>Welcome to the greatest library!</p>
+  <h3>Library content:</h3>
+  <ul>
+    <li>Num books: {{ num_books }}</li>
+    <li>Num authors: {{ num_authors }}</li>
+    <li>Literary formats: {{ formats }}</li>
+  </ul>
+{% endblock content %}
