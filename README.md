@@ -266,10 +266,76 @@ Book.objects.bulk_create([Book(title=f"Test Book {i}", price=i, format_id=1) for
 # #############################
 complete Class-Based Generic Views
 # ##########################
+Sessions and Authentication
+# #############################
+def test_session_view(request: HttpRequest,
+                     ) -> HttpResponse:
+    request.session["book"] = "Test Session book"
+>>> from django.contrib.sessions.models import Session
+>>> session = Session.objects.get(session_key="qultjd8sctqrqy275apkrxakd0dndzef")
+>>> session.get_decoded()
+{'book': 'Test Session book'}
+
+def index(request: HttpRequest) -> HttpResponse:
+    num_visits = request.session.get("num_visits", 0)
+    request.session["num_visits"] = -~num_visits
+    ...
+
+python manage.py startapp accounts
+INSTALLED_APPS = [... "accounts", ]
+# in main urls.py
+urlpatterns = [... , path("accounts/", include("accounts.urls", namespace="accounts"), ),]
+
+# create accounts/urls.py
+from django.urls import path
+from accounts.views import
+urlpatterns = [ path('login/', login_view, name='login'), ]
+app_name = 'accounts'
+
+{% block content %}
+  <h1>Login</h1>
+  <span style="color: red">{{ error }}</span>
+  <form action="{% url 'accounts:login' %}" method="post">
+    {% csrf_token %}
+    <label>Username:
+      <input type="text" name="username">
+    </label>
+    <label>Password:
+      <input type="password" name="password">
+    </label>
+    <input type="submit" value="Submit">
+  </form>
+{% endblock %}
 
 
+def login_view(request: HttpRequest) -> HttpResponse:
+    if request.method == 'GET':
+        return render(request,
+                      "accounts/login.html",
+                      {"error": ""},)
+    if request.method == 'POST':
+        user = authenticate(username=request.POST['username'],
+                            password=request.POST['password'],
+                            )
+        if user:
+            login(request, user)
+            return HttpResponseRedirect(reverse("catalog:index"))
+        return render(request,
+                      "accounts/login.html",
+                      {"error": "Invalid username or password"},
+                      )
+
+def logout_view(request: HttpRequest) -> HttpResponse:
+    logout(request)
+    return render(request, "accounts/logout.html")
+
+@login_required
+def index(request: HttpRequest) -> HttpResponse:
+
+class LiteraryFormatListView(LoginRequiredMixin, ListView):
 
 
+ path("accounts/", include("django.contrib.auth.urls", ), ),
 
 
 

@@ -7,6 +7,7 @@ from catalog.views import (index,
                            book_detail_view,
                            BookDetailView,
                            AuthorListView,
+                           test_session_view,
                            )
 
 urlpatterns = [
@@ -24,6 +25,7 @@ urlpatterns = [
     path('authors/',
          AuthorListView.as_view(),
          name="author-list"),
+    path("test-session/", test_session_view, name="test-session")
 ]
 
 app_name = 'catalog'
