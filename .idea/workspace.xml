@@ -113,7 +113,8 @@
       <workItem from="1705844933871" duration="12485000" />
       <workItem from="1705913629842" duration="21351000" />
       <workItem from="1705937765831" duration="632000" />
-      <workItem from="1705993359211" duration="16002000" />
+      <workItem from="1705993359211" duration="22503000" />
+      <workItem from="1706023936781" duration="455000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -179,7 +180,23 @@
       <option name="project" value="LOCAL" />
       <updated>1705937579233</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="custom authorization comlete">
+      <option name="closed" value="true" />
+      <created>1706017572472</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1706017572472</updated>
+    </task>
+    <task id="LOCAL-00010" summary="custom authorization comlete">
+      <option name="closed" value="true" />
+      <created>1706017576162</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1706017576162</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +219,7 @@
     <MESSAGE value="complete django intro" />
     <MESSAGE value="complete mvt" />
     <MESSAGE value="complete Class-Based Generic Views" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete Class-Based Generic Views" />
+    <MESSAGE value="custom authorization comlete" />
+    <option name="LAST_COMMIT_MESSAGE" value="custom authorization comlete" />
   </component>
 </project>

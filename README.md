@@ -337,6 +337,9 @@ class LiteraryFormatListView(LoginRequiredMixin, ListView):
 
  path("accounts/", include("django.contrib.auth.urls", ), ),
 
+# settings.py
+LOGIN_REDIRECT_URL = "/catalog/"
+
 
 
 
